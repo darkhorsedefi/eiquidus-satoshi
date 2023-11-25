@@ -290,7 +290,7 @@ function route_get_txlist(res, error) {
         customHash: get_custom_hash(),
         styleHash: get_style_hash(),
         themeHash: get_theme_hash(),
-        page_title_prefix: settings.coin.name + ' ' + 'Block Explorer'
+        page_title_prefix: 'Satoshi Coin' + ' ' + 'Block Explorer'
       }
     );
   });

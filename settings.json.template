@@ -12,7 +12,7 @@
     // user: The MongoDB username
     "user": "eiquidus",
     // password: The MongoDB password
-    "password": "Nd^p2d77ceBX!L",
+    "password": "PASSWORD",
     // database: The MongoDB database name (default: explorerdb)
     "database": "explorerdb",
     // address: The MongoDB hostname. This should always be 'localhost' if connecting to a local instance, otherwise specify the ip address of a remote instance
@@ -26,11 +26,11 @@
     // host: The hostname or ip address of the wallet to connect to (default: localhost)
     "host": "localhost",
     // port: The port # that the wallet is configured to listen for RPC requests on (default: 51573 for Exor wallet)
-    "port": 51573,
+    "port": 14741,
     // username: The wallet RPC username
-    "username": "exorrpc",
+    "username": "USERNAME",
     // password: The wallet RPC password
-    "password": "sSTLyCkrD94Y8&9mr^m6W^Mk367Vr!!K"
+    "password": "PASSWORD"
   },
 
   // webserver: a collection of settings that pertain to the node.js express web framework (read more: https://www.npmjs.com/package/express)
@@ -50,7 +50,7 @@
       // always_redirect: Force all explorer traffic to use https
       //                  If set to true, all http web requests will automatically be forwarded to https
       //                  If set to false, the webserver will allow both http and https traffic
-      "always_redirect": true,
+      "always_redirect": false,
       // cert_file: The absolute or relative path to the tls certificate file. Typically this file will be generated from certbot (read more: https://certbot.eff.org)
       "cert_file": "/etc/letsencrypt/live/domain-name-here/cert.pem",
       // chain_file: The absolute or relative path to the tls chain file. Typically this file will be generated from certbot (read more: https://certbot.eff.org)
@@ -77,9 +77,9 @@
   "coin": {
     // name: Name of the cryptocurrency coin being explored. This value is displayed in the page header when the "shared_pages.page_header.home_link" setting is set to "coin".
     //       NOTE: This value acts as a unique identifier for data stored in mongo and therefore cannot be changed without re-syncing all existing data.
-    "name": "Exor",
+    "name": "SatoshiCoin",
     // symbol: The cryptocurrency coin ticker/symbol value. This value is displayed anywhere that coin data is displayed including the index, address, block, movement, reward, richlist/top100 and tx pages
-    "symbol": "EXOR"
+    "symbol": "SAT"
   },
 
   // network_history: a collection of settings that controls saving of extra historical network data during a block sync
@@ -98,9 +98,9 @@
     // theme: Change the look & feel of the explorer with a unique theme. Uses bootswatch themes (https://bootswatch.com)
     //        Valid options: Cerulean, Cosmo, Cyborg, Darkly, Exor, Flatly, Journal, Litera, Lumen, Lux, Materia, Minty, Morph, Pulse, Quartz, Sandstone, Simplex, Sketchy, Slate, Solar, Spacelab, Superhero, United, Vapor, Yeti, Zephyr
     //        (see /public/css/themes for available themes)
-    "theme": "Exor",
+    "theme": "Lux",
     // page_title: The text to display at the end of the HTML title tag and also displayed in the page header when the "shared_pages.page_header.home_link" setting is set to "title"
-    "page_title": "eIquidus",
+    "page_title": "SatoshiCoin",
     // favicons: a collection of image or icon files that are displayed in a browser window/tab and serve as branding for your website. Their main purpose is to help visitors locate your page easier when they have multiple tabs open
     //          Modern favicon sizes were inspired by this web article: https://www.emergeinteractive.com/insights/detail/The-Essentials-of-FavIcons/
     //          NOTE: If any of the favicons are left blank or not set to a valid file, they will be disabled and unused
@@ -145,13 +145,13 @@
     //                if confirms are >= to this value then the block or tx is considered valid and shows up in green
     //                if confirms are < this value by more than 50% then the block or tx is considered unconfirmed and shows up in red
     //                if confirms are < this value by less than 50% then the block or tx is considered unconfirmed and shows up in orange
-    "confirmations": 40,
+    "confirmations": 3,
     // difficulty: Determine which network difficulty value to display (valid options are: POW, POS or Hybrid)
     //             Some blockchains show different difficulty values depending on available POW/POS options:
     //             POW: Display the proof-of-work difficulty value
     //             POS: Display the proof-of-stake difficulty value
     //             Hybrid: Display both the proof-of-work and proof-of-stake difficulty values
-    "difficulty": "POS",
+    "difficulty": "Hybrid",
     // show_hashrate: Determine whether to show network hash rate where applicable (true/false)
     //                If set to false, the /api/getnetworkhashps and /ext/getsummary apis will no longer show hash rate information, and the network hashrate chart will automatically be disabled
     "show_hashrate": true,
@@ -184,11 +184,11 @@
         "network_panel": {
           // enabled: Enable/disable the network panel (true/false)
           //          If set to false, the network panel will be completely inaccessible
-          "enabled": false,
+          "enabled": true,
           // display_order: Determine which order this panel is shown from 1-5
           //                1 = far left panel, 5 = far right panel
           //                The panel will be disabled with a value of 0
-          "display_order": 0,
+          "display_order": 1,
           // nethash: Determine how to acquire network hashrate. Valid options:
           //          getnetworkhashps: retrieved from getnetworkhashps rpc cmd
           //          netmhashps: retrieved from getmininginfo rpc cmd
@@ -206,17 +206,17 @@
         "difficulty_panel": {
           // enabled: Enable/disable the difficulty panel (true/false)
           //          If set to false, the difficulty panel will be completely inaccessible
-          "enabled": false,
+          "enabled": true,
           // display_order: Determine which order this panel is shown from 1-5
           //                1 = far left panel, 5 = far right panel
           //                The panel will be disabled with a value of 0
-          "display_order": 0
+          "display_order": 4
         },
         // masternodes_panel: a collection of settings that pertain to the masternode panel which displays a count of online and unreachable masternodes (only applicable to masternode coins)
         "masternodes_panel": {
           // enabled: Enable/disable the masternode panel (true/false)
           //          If set to false, the masternode panel will be completely inaccessible
-          "enabled": true,
+          "enabled": false,
           // display_order: Determine which order this panel is shown from 1-5
           //                1 = far left panel, 5 = far right panel
           //                The panel will be disabled with a value of 0
@@ -230,13 +230,13 @@
           // display_order: Determine which order this panel is shown from 1-5
           //                1 = far left panel, 5 = far right panel
           //                The panel will be disabled with a value of 0
-          "display_order": 1
+          "display_order": 2
         },
         // price_panel: a collection of settings that pertain to the price panel which displays the current market price measured against the default market pair
         "price_panel": {
           // enabled: Enable/disable the price panel (true/false)
           //          If set to false, the price panel will be completely inaccessible
-          "enabled": true,
+          "enabled": false,
           // display_order: Determine which order this panel is shown from 1-5
           //                1 = far left panel, 5 = far right panel
           //                The panel will be disabled with a value of 0
@@ -246,7 +246,7 @@
         "market_cap_panel": {
           // enabled: Enable/disable the market cap panel (true/false)
           //          If set to false, the market cap panel will be completely inaccessible
-          "enabled": true,
+          "enabled": false,
           // display_order: Determine which order this panel is shown from 1-5
           //                1 = far left panel, 5 = far right panel
           //                The panel will be disabled with a value of 0
@@ -271,18 +271,18 @@
           // display_order: Determine which order this panel is shown from 1-5
           //                1 = far left panel, 5 = far right panel
           //                The panel will be disabled with a value of 0
-          "display_order": 0
+          "display_order": 4
         },
         // spacer_panel_2: a collection of settings that pertain to the 2nd spacer panel which allows inserting a blank space into the top panels
         //                 NOTE: spacer panels are only visible on desktop and tablet screen sizes and are hidden on mobile screens
         "spacer_panel_2": {
           // enabled: Enable/disable the spacer panel (true/false)
           //          If set to false, the spacer panel will be completely inaccessible
-          "enabled": false,
+          "enabled": true,
           // display_order: Determine which order this panel is shown from 1-5
           //                1 = far left panel, 5 = far right panel
           //                The panel will be disabled with a value of 0
-          "display_order": 0
+          "display_order": 5
         },
         // spacer_panel_3: a collection of settings that pertain to the 3rd spacer panel which allows inserting a blank space into the top panels
         //                 NOTE: spacer panels are only visible on desktop and tablet screen sizes and are hidden on mobile screens
@@ -412,7 +412,7 @@
           // tooltip_text: Social link tooltips are always prefixed by the "coin.name" setting followed by the text from this tooltip_text setting. Ex: Exor Github
           "tooltip_text": "Github",
           // url: The exact url that the social link should navigate to
-          "url": "https://github.com/team-exor",
+          "url": "https://github.com/satoshianon",
           // fontawesome_class: A string of css classes, separated by spaces that can be used to display a fontawesome icon for this social link. See https://fontawesome.com/ for more info
           "fontawesome_class": "fa-brands fa-github",
           // image_path: The path to an image file that will be displayed for this social link
@@ -426,7 +426,7 @@
           // tooltip_text: Social link tooltips are always prefixed by the "coin.name" setting followed by the text from this tooltip_text setting. Ex: Exor Twitter
           "tooltip_text": "Twitter",
           // url: The exact url that the social link should navigate to
-          "url": "https://twitter.com/ExorOfficial",
+          "url": "https://twitter.com/satoshianon",
           // fontawesome_class: A string of css classes, separated by spaces that can be used to display a fontawesome icon for this social link. See https://fontawesome.com/ for more info
           "fontawesome_class": "fa-brands fa-twitter",
           // image_path: The path to an image file that will be displayed for this social link
@@ -436,7 +436,7 @@
         {
           // enabled: Enable/disable this particular social link (true/false)
           //          If set to false, the link will be completely inaccessible
-          "enabled": true,
+          "enabled": false,
           // tooltip_text: Social link tooltips are always prefixed by the "coin.name" setting followed by the text from this tooltip_text setting. Ex: Exor Discord
           "tooltip_text": "Discord",
           // url: The exact url that the social link should navigate to
@@ -450,11 +450,11 @@
         {
           // enabled: Enable/disable this particular social link (true/false)
           //          If set to false, the link will be completely inaccessible
-          "enabled": true,
+          "enabled": false,
           // tooltip_text: Social link tooltips are always prefixed by the "coin.name" setting followed by the text from this tooltip_text setting. Ex: Exor Telegram
           "tooltip_text": "Telegram",
           // url: The exact url that the social link should navigate to
-          "url": "https://t.me/Exorofficial",
+          "url": "https://t.me/satoshianon",
           // fontawesome_class: A string of css classes, separated by spaces that can be used to display a fontawesome icon for this social link. See https://fontawesome.com/ for more info
           "fontawesome_class": "fa-brands fa-telegram",
           // image_path: The path to an image file that will be displayed for this social link
@@ -468,7 +468,7 @@
           // tooltip_text: Social link tooltips are always prefixed by the "coin.name" setting followed by the text from this tooltip_text setting. Ex: Exor Website
           "tooltip_text": "Website",
           // url: The exact url that the social link should navigate to
-          "url": "https://exor.io",
+          "url": "https://satoshicoin.pro",
           // fontawesome_class: A string of css classes, separated by spaces that can be used to display a fontawesome icon for this social link. See https://fontawesome.com/ for more info
           "fontawesome_class": "",
           // image_path: The path to an image file that will be displayed for this social link
@@ -478,7 +478,7 @@
         {
           // enabled: Enable/disable this particular social link (true/false)
           //          If set to false, the link will be completely inaccessible
-          "enabled": true,
+          "enabled": false,
           // tooltip_text: Social link tooltips are always prefixed by the "coin.name" setting followed by the text from this tooltip_text setting. Ex: Exor Coingecko
           "tooltip_text": "Coingecko",
           // url: The exact url that the social link should navigate to
@@ -545,7 +545,7 @@
   // block_page: a collection of settings that pertain to the block page
   "block_page": {
     // show_panels: Determine whether to show the panels configured in the shared_pages.page_header section across the top of this page (true/false)
-    "show_panels": false,
+    "show_panels": true,
     // show_nethash_chart: Determine whether to show the network hashrate chart configured in the shared_pages.network_charts.nethash_chart section across the top of this page (true/false)
     "show_nethash_chart": false,
     // show_difficulty_chart: Determine whether to show the network difficulty chart configured in the shared_pages.network_charts.difficulty_chart section across the top of this page (true/false)
@@ -568,7 +568,7 @@
   // transaction_page: a collection of settings that pertain to the transaction/tx page
   "transaction_page": {
     // show_panels: Determine whether to show the panels configured in the shared_pages.page_header section across the top of this page (true/false)
-    "show_panels": false,
+    "show_panels": true,
     // show_nethash_chart: Determine whether to show the network hashrate chart configured in the shared_pages.network_charts.nethash_chart section across the top of this page (true/false)
     "show_nethash_chart": false,
     // show_difficulty_chart: Determine whether to show the network difficulty chart configured in the shared_pages.network_charts.difficulty_chart section across the top of this page (true/false)
@@ -594,7 +594,7 @@
   // address_page: a collection of settings that pertain to the address page
   "address_page": {
     // show_panels: Determine whether to show the panels configured in the shared_pages.page_header section across the top of this page (true/false)
-    "show_panels": false,
+    "show_panels": true,
     // show_nethash_chart: Determine whether to show the network hashrate chart configured in the shared_pages.network_charts.nethash_chart section across the top of this page (true/false)
     "show_nethash_chart": false,
     // show_difficulty_chart: Determine whether to show the network difficulty chart configured in the shared_pages.network_charts.difficulty_chart section across the top of this page (true/false)
@@ -654,7 +654,7 @@
   "masternodes_page": {
     // enabled: Enable/disable the masternodes page (true/false)
     //          If set to false, the masternodes page will be completely inaccessible
-    "enabled": true,
+    "enabled": false,
     // show_panels: Determine whether to show the panels configured in the shared_pages.page_header section across the top of this page (true/false)
     "show_panels": false,
     // show_nethash_chart: Determine whether to show the network hashrate chart configured in the shared_pages.network_charts.nethash_chart section across the top of this page (true/false)
@@ -728,7 +728,7 @@
   "network_page": {
     // enabled: Enable/disable the network page (true/false)
     //          If set to false, the network page will be completely inaccessible
-    "enabled": true,
+    "enabled": false,
     // show_panels: Determine whether to show the panels configured in the shared_pages.page_header section across the top of this page (true/false)
     "show_panels": false,
     // show_nethash_chart: Determine whether to show the network hashrate chart configured in the shared_pages.network_charts.nethash_chart section across the top of this page (true/false)
@@ -1101,7 +1101,7 @@
         "getvotelist": {
           // enabled: Enable/disable the /api/getvotelist api endpoint (true/false)
           //          If set to false, the /api/getvotelist api will be completely disabled for public use (no definition on the api page and a disabled error msg if you try to call the endpoint directly)
-          "enabled": true
+          "enabled": false
         },
         // getmasternodecount: a collection of settings that pertain to the /api/getmasternodecount api endpoint
         //                     Returns a json object containing the total number of masternodes on the network (only applicable to masternode coins)
@@ -1109,7 +1109,7 @@
         "getmasternodecount": {
           // enabled: Enable/disable the /api/getmasternodecount api endpoint (true/false)
           //          If set to false, the /api/getmasternodecount api will be completely disabled for public use (no definition on the api page and a disabled error msg if you try to call the endpoint directly)
-          "enabled": true
+          "enabled": false
         }
       },
       // ext: a collection of settings that pertain to the extended apis that are retrieved from local mongo database collection
@@ -1319,7 +1319,7 @@
     //         HEAVY: retrieved from getsupply rpc cmd (The "blockchain_specific.heavycoin.enabled" setting must be set to true and the "blockchain_specific.heavycoin.api_cmds.getsupply" setting must be set up correctly for this option to work properly)
     //         BALANCES : get the supply by running a query on the addresses collection and summing up all positive balances (potentially a long running query for blockchains with tons of addresses)
     //         TXOUTSET : retrieved from gettxoutsetinfo rpc cmd
-    "supply": "GETINFO"
+    "supply": "TXOUTSET"
   },
 
   // labels: a collection of settings that pertain to the list of customized wallet address labels
@@ -1328,12 +1328,12 @@
   "labels": {
     // A collection of settings that pertain to the EJ6yc47cAZMGWHFccc9gfGbDLYuyNhP6wL wallet address
     // NOTE: Change this value to the wallet address that you would like to set a custom label on
-    "EJ6yc47cAZMGWHFccc9gfGbDLYuyNhP6wL": {
+    "SfSSW5Z1ZWNsyChdPp5q13c7qk14tot97a": {
       // enabled: Enable/disable this particular wallet address label (true/false)
       //          If set to false, the label will be completely hidden
-      "enabled": false,
+      "enabled": true,
       // label: The text to display in the custom label
-      "label": "Development Budget",
+      "label": "Dev Fund",
       // type: The bootstrap CSS class suffix for the label. This will change the background color of the label.
       //       Valid options: primary, secondary, success, danger, warning, info, light, dark
       //       NOTE: Leave the value blank ( "" ) to use default colors
