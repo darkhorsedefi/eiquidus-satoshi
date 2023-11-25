@@ -92,8 +92,8 @@
   "mn_masternode_list": "Masternode List",
 
   // movement view
-  "move_title": "Satoshi Coin Coin Movements",
-  "move_description": "A listing of larger movements where Satoshi Coin or more {2} coins were sent in a single transaction",
+  "move_title": "Satoshi Coin Movements",
+  "move_description": "A listing of larger movements where Satoshi Coin or more Satoshi Coins were sent in a single transaction",
 
   // richlist view
   "rl_title": "Top Satoshi Coin Holders",
