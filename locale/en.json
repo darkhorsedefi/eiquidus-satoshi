@@ -96,7 +96,7 @@
   "move_description": "A listing of larger movements where Satoshi Coin or more {2} coins were sent in a single transaction",
 
   // richlist view
-  "rl_title": "Top Satoshi Coin Coin Holders",
+  "rl_title": "Top Satoshi Coin Holders",
   "rl_description": "A listing of the richest Satoshi Coin wallet addresses and breakdown of the current coin distribution",
   "rl_received_coins": "Top 100 - Received Coins",
   "rl_current_balance": "Top 100 - Current Balance",
